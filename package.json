@@ -1,0 +1,19 @@
+{
+  "name": "@omrajguru05/substrate",
+  "version": "1.0.0",
+  "description": "Unified design system and brand language skill for Substrate Labs",
+  "author": "Substrate Labs <hi@substrates.in>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omrajguru05/substrate.git"
+  },
+  "keywords": [
+    "skills",
+    "agent-skills",
+    "substrate",
+    "design-system",
+    "writing-voice",
+    "dark-field"
+  ]
+}
