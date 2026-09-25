@@ -5,13 +5,14 @@ description: "The complete dark-field laboratory design system, component archit
 
 # Substrate Labs — Design System & Brand Language
 
-A unified dark-field laboratory identity, component engineering system, and brand language for Substrate Labs (`substrates.in`).
+A unified dark-field laboratory identity, component engineering system, Apple HIG accessibility framework, and brand language for Substrate Labs (`substrates.in`).
 
-> Every page is a specimen slide on a black microscope field — grey is structure, red is stimulus, green is response. The writing is clear, calm, capable, and human. The work comes first.
+> Every page is a specimen slide on a black microscope field — grey is structure, red is stimulus, green is response. The interface is brutally simple: zero technical clutter, effortless for anyone to use, hiding all computational complexity behind the scenes. The writing is clear, calm, capable, and human. The work comes first.
 
-This master skill consolidates two core disciplines into a single operating standard:
+This master skill consolidates three core disciplines into a single operating standard:
 1. **[Design System](#part-1--the-dark-field-laboratory-design-system)** ([references/design-system.md](./references/design-system.md)): Dark-field laboratory identity, 8-color vial/observed token system, typography, 4-tier container scale, canvas specimens, and the 18 rich article components.
-2. **[Brand Language & Writing Voice](#part-2--substrate-voice--core-qualities)** ([references/brand-language.md](./references/brand-language.md)): Product copy, interface microcopy, research updates, technical papers, clinical/medical safety, release headlines, and the 14-question pre-publication test.
+2. **[Brutal Simplicity & Apple HIG Compliance](#part-2--brutal-simplicity--apple-hig-compliance-the-grandma-standard)** ([references/hig-and-simplicity.md](./references/hig-and-simplicity.md)): The Grandma Standard, minimal buttons, hidden complexity, 8 Apple HIG principles, accessibility foundations, and 6 disability category standards.
+3. **[Brand Language & Writing Voice](#part-3--substrate-voice--core-qualities)** ([references/brand-language.md](./references/brand-language.md)): Product copy, interface microcopy, research updates, technical papers, clinical/medical safety, release headlines, and the 14-question pre-publication test.
 
 ---
 
@@ -19,14 +20,16 @@ This master skill consolidates two core disciplines into a single operating stan
 
 1. **The Ground is Void:** Pure black (`#000000`), edge to edge. It is not a dark theme; it is the absence of a lamp. Light mode does not exist, is not hidden behind a toggle, and will never be planned.
 2. **The Signal is Strict:** Exactly two colors mean things. **Blood red (`#B51F2E` observed / `#8B0000` vial) is stimulus** — user activation, selection, focus rings, alerts, action potentials. **Bio green (`#39D353` observed / `#39FF88` vial) is response** — synapse confirmed, living organism, success. Never use red or green for decoration. Never admit a fifth hue (no blue, no purple).
-3. **The DOM is Still; Life Happens in the Canvas:** Chrome never twinkles, blinks, or decorates itself with CSS keyframes. All motion lives inside HTML5 Canvas preparations (`NeuralSpecimen`, `SpecimenField`, `SignalSpecimen`). All canvases must honor `prefers-reduced-motion` with a dormant static frame.
-4. **4-Tier Container Architecture:** All publishing surfaces follow strict container bounds: Prose text (`680px`), Media figures/tables/code (`1140px`), Wide/Dense charts and diagrams (`1280px`), and Page shell (`1440px`).
-5. **Hairlines Over Boxes:** Density and structure are achieved via hairlines (`rgba(255,255,255,0.14)` and `0.08`–`0.18`) and negative void space, never via drop shadows, blurred glass, or floating cards.
-6. **Confidence Without Theatre:** State things plainly. Never manufacture excitement around ordinary progress. Never make ambitious work vague to sound impressive.
-7. **Literal Interface Language:** Interfaces describe what is actually happening. Use "Reading document…" never "Thinking…"; use "Report deleted" never "Success! Your report has been successfully deleted".
-8. **Evidence Before Adjectives:** Never rely on empty praise ("revolutionary", "powerful", "seamless", "next-generation"). If something improved, state the evidence and replace the adjective with a human-scale number.
-9. **Human-Scale Numbers First:** Translate raw infrastructure metrics into human terms before giving technical specifications (e.g. "A 300-page record takes about 2½ minutes to process" before stating "120 pages per minute").
-10. **Unapologetic Honesty About Limitations:** State uncertainty and limitations with the same clarity and confidence as capabilities. A limitation that materially affects use belongs near the relevant capability, not buried in legal disclaimers.
+3. **Brutal Simplicity (The Grandma Standard):** The user interface must be so simple, clear, and effortless that even a grandmother can use it without confusion or guidance. Zero technical jargon, minimal buttons, no clutter, and no complex visual mazes.
+4. **Complexity Hidden Behind the Scenes:** In both frontend interfaces and backend system designs / data models, the architecture must absorb all complexity. The user only ever experiences an obvious, calm, and direct path.
+5. **Apple HIG & Universal Accessibility Compliance:** Every interface must be auditable via `omrajguru05/hig-compliance-auditor`. Uphold the 8 Apple HIG Design Principles (Purpose, Agency, Responsibility, Familiarity, Flexibility, Simplicity, Craft, Delight) and satisfy all 6 Disability Categories (Vision, Hearing, Mobility, Speech, Cognitive, Motion).
+6. **The DOM is Still; Life Happens in the Canvas:** Chrome never twinkles, blinks, or decorates itself with CSS keyframes. All motion lives inside HTML5 Canvas preparations (`NeuralSpecimen`, `SpecimenField`, `SignalSpecimen`). All canvases must honor `prefers-reduced-motion` with a dormant static frame.
+7. **4-Tier Container Architecture:** All publishing surfaces follow strict container bounds: Prose text (`680px`), Media figures/tables/code (`1140px`), Wide/Dense charts and diagrams (`1280px`), and Page shell (`1440px`).
+8. **Hairlines Over Boxes:** Density and structure are achieved via hairlines (`rgba(255,255,255,0.14)` and `0.08`–`0.18`) and negative void space, never via drop shadows, blurred glass, or floating cards.
+9. **Literal Interface Language:** Interfaces describe what is actually happening. Use "Reading document…" never "Thinking…"; use "Report deleted" never "Success! Your report has been successfully deleted".
+10. **Evidence Before Adjectives:** Never rely on empty praise ("revolutionary", "powerful", "seamless", "next-generation"). If something improved, state the evidence and replace the adjective with a human-scale number.
+11. **Human-Scale Numbers First:** Translate raw infrastructure metrics into human terms before giving technical specifications (e.g. "A 300-page record takes about 2½ minutes to process" before stating "120 pages per minute").
+12. **Unapologetic Honesty About Limitations:** State uncertainty and limitations with the same clarity and confidence as capabilities. A limitation that materially affects use belongs near the relevant capability, not buried in legal disclaimers.
 
 ---
 
@@ -35,6 +38,7 @@ This master skill consolidates two core disciplines into a single operating stan
 > [!IMPORTANT]
 > **Agents and developers must inspect the corresponding reference documentation when executing deep tasks:**
 > - **[`references/design-system.md`](./references/design-system.md)**: Inspect before modifying UI tokens, layout containers, specimen canvases, or article components.
+> - **[`references/hig-and-simplicity.md`](./references/hig-and-simplicity.md)**: Inspect before building or auditing any user-facing screen, interactive control, touch target, accessibility tree, or system architecture.
 > - **[`references/brand-language.md`](./references/brand-language.md)**: Inspect before drafting product microcopy, technical announcements, clinical/medical documentation, research releases, or changelogs (contains the full 54 chapters of Substrate Brand Language).
 
 ---
@@ -138,41 +142,72 @@ rounded:
 
 ---
 
-# Part 2 — Substrate Voice & Core Qualities
+# Part 2 — Brutal Simplicity & Apple HIG Compliance (The Grandma Standard)
+
+Every interface in Substrate must pass the **Grandma Test**: it must be brutally simple, completely free of engineering jargon, uncluttered, and so intuitive that anyone can use it effortlessly.
+
+## 2.1 The Grandma Standard
+1. **Zero Technical Jargon:** Never expose engineering or computational terminology (e.g. "embeddings", "vector space", "inference pipeline", "token buffers") in user-facing surfaces. Use plain, direct, human language.
+2. **Minimal Buttons & Zero Visual Noise:** Provide one clear primary action per screen. Remove extraneous pills, nested options, and secondary clutter. If a screen feels full, subtract until only the essentials remain.
+3. **Hide Complexity Behind the Scenes:** System design and data architecture must absorb multi-step pipelines, data conversions, and parsing routines. The user sees only a calm status ("Reading document…", "Preparing summary…") and the final result.
+4. **Forgiving Interactions:** Support easy undo, clear error recovery, and flexible input types. Never blame the user.
+
+## 2.2 Apple HIG Eight Core Principles
+Every screen and component must satisfy these principles:
+- **Purpose:** Design with intention. Identify what matters most to users and focus relentlessly on making those core tasks effortless.
+- **Agency:** Let people act their own way. Give them freedom, keep them informed of state changes, and make recovery from mistakes easy.
+- **Responsibility:** Act in people's best interest. Prioritize safety, privacy, and full transparency about what the product does.
+- **Familiarity:** Build on what people know. Use established physical and digital patterns consistently.
+- **Flexibility:** Adapt to diverse contexts and needs. Support multiple devices, interaction types, and perspectives.
+- **Simplicity:** Be clear and direct. Remove the unnecessary; every element must earn its place.
+- **Craft:** Care about every detail. Show dedication through thoughtful execution, smooth 60fps/120fps interactions, and exact alignment.
+- **Delight:** Make it human. Design for calm, satisfaction, and trust.
+
+## 2.3 Accessibility Foundations
+- **Intuitive:** Interactions are familiar, straightforward, and consistent.
+- **Perceivable:** Information is accessible through sight, hearing, and touch. Never rely on color alone.
+- **Adaptable:** Supports Dynamic Type, system font scaling, and personalization.
+
+## 2.4 Six Disability Categories & Implementation Standards
+- **Vision:** Dynamic Type scaling, strict contrast standards (minimum 4.5:1 body, 7:1 metadata), dual-channel signaling (never color alone; red/green paired with shapes, icons, or text), comprehensive screen-reader semantics (`sr-only` context, descriptive `alt` text).
+- **Hearing:** Full text alternatives for all audio and video (transcripts, captions), visual indicators paired with audio states.
+- **Mobility:** Minimum 44×44px interactive touch targets, adequate spacing (>=8px), prominent keyboard focus rings (`:focus-visible` with `2px solid #b51f2e; outline-offset: 4px`), simple gestures with click/tap alternatives.
+- **Speech:** Full keyboard and pointer navigation; zero speech-only barriers; compatibility with Switch Control.
+- **Cognitive:** Streamlined single-action tasks, no artificial time-boxes or countdowns, zero flashing animations, full media playback control, and clear error recovery.
+- **Motion:** Honor `prefers-reduced-motion: reduce` by freezing canvas loops into a dormant static frame; gentle transitions; comfortable view boundaries.
+
+---
+
+# Part 3 — Substrate Voice & Core Qualities
 
 Substrate sounds **clear, calm, capable, and human**.
 
 The writing never needs to prove that the company is intelligent, serious, transparent, humane, technically capable, or ambitious. Those qualities must be apparent from the work, the evidence, the decisions we explain, and the way we speak to people.
 
-## 2.1 Calm
+## 3.1 Calm
 Sound composed. Never use urgency, exaggerated excitement, dramatic framing, or inflated language to make ordinary work feel consequential.
-
 - *Avoid:* "This changes everything." / "A new era begins today." / "The future of medicine starts here."
 - *Prefer:* "Clinical 1 is available today." / "We have started testing the model on longer patient records." / "Document processing is currently delayed."
 
-## 2.2 Confident
+## 3.2 Confident
 State what is known without unnecessary hedging. Confidence should come from knowing what the evidence supports.
-
 - *Avoid:* "We believe Clinical 1 may potentially offer improvements when working with longer records."
 - *Prefer:* "Clinical 1 handles longer records than the previous model."
 
-## 2.3 Straightforward
+## 3.3 Straightforward
 Get to the point early. Do not introduce a simple idea with multiple lines of setup. Do not hide an inconvenient fact behind formal corporate language.
-
 - *Avoid:* "We are currently experiencing a temporary degradation in certain parts of the document processing experience."
 - *Prefer:* "Document processing is delayed. Uploads are working normally, but results may take longer than usual."
 
-## 2.4 Humane
+## 3.4 Humane
 Write for the person using the product. Put the useful human meaning before the engineering specification.
-
 - *Avoid leading with:* "200K context window."
 - *Prefer leading with:* "You can give it an entire patient history and ask questions across it."
 - *Avoid leading with:* "40% lower inference cost."
 - *Prefer leading with:* "A workload that previously cost about ₹100 now costs about ₹60."
 
-## 2.5 Kind
+## 3.5 Kind
 Do not blame people for errors. Do not make someone feel uninformed because they do not understand a technical term. Do not hide bad news behind cheerful language.
-
 - *Avoid:* "Invalid user configuration."
 - *Prefer:* "This device is using a setting the system does not currently support."
 - *Avoid:* "Invalid file uploaded."
@@ -180,9 +215,9 @@ Do not blame people for errors. Do not make someone feel uninformed because they
 
 ---
 
-# Part 3 — Product & Interface Writing Language
+# Part 4 — Product & Interface Writing Language
 
-## 3.1 Literal Interface States
+## 4.1 Literal Interface States
 Interfaces must describe what is actually happening.
 
 | State | Avoid | Prefer |
@@ -193,13 +228,13 @@ Interfaces must describe what is actually happening.
 | **Confirmations**| "Success! Your report has been successfully deleted." | "Report deleted." / "Changes saved." |
 | **Buttons / CTAs**| "Get started" / "Explore" / "Continue" | "Upload report" / "Compare reports" / "Review fields" / "Download PDF" |
 
-## 3.2 Banned Filler & Pseudo Labels
+## 4.2 Banned Filler & Pseudo Labels
 Every word must explain what something is, help someone decide, or communicate a limitation.
 - *Avoid:* "Your clinical intelligence workspace" → *Prefer:* "Recent reports"
 - *Avoid:* "Begin your document analysis journey" → *Prefer:* "Upload report"
 - *Rule:* If a label or heading can disappear without making the interface harder to understand, remove it. Whitespace is always better than filler.
 
-## 3.3 Uncertainty & Limitations
+## 4.3 Uncertainty & Limitations
 Uncertainty is an inherent part of scientific systems. State it directly and locally.
 - *Avoid:* "AI can make mistakes."
 - *Prefer:* "The model could not determine this value reliably." / "The model found two possible readings for this value. Check the original report."
@@ -207,20 +242,20 @@ Uncertainty is an inherent part of scientific systems. State it directly and loc
 
 ---
 
-# Part 4 — Research, Technical & Clinical Communication
+# Part 5 — Research, Technical & Clinical Communication
 
-## 4.1 Research Writing
+## 5.1 Research Writing
 Distinguish clearly between what was observed, what is inferred, and what remains uncertain:
 - "The model extracted 91% of medications correctly on this evaluation set."
 - "This suggests the additional pre-training data improved abbreviation recognition, though we have not verified the mechanism."
 - "We do not know whether this improvement will transfer to handwriting from other hospital systems."
 
-## 4.2 Model Cards & Releases
+## 5.2 Model Cards & Releases
 Every model release must lead with tangible capability and evidence:
 - *Avoid:* "Clinical 2 represents an unprecedented leap in healthcare intelligence."
 - *Prefer:* "Clinical 2 reads handwritten prescriptions more reliably and handles longer records than Clinical 1. It makes fewer extraction errors on structured discharge summaries but remains limited on low-resolution scans."
 
-## 4.3 Medical & Safety Language
+## 5.3 Medical & Safety Language
 Medical writing must be rigorous without becoming sterile:
 - Distinguish between: extracted information, model interpretation, clinical finding, suggestion, uncertainty, diagnosis, and recommendation.
 - Never imply that a system has made a diagnosis when it has only summarized or classified information.
@@ -228,30 +263,30 @@ Medical writing must be rigorous without becoming sterile:
 
 ---
 
-# Part 5 — Editorial, Brand & Operational Voice
+# Part 6 — Editorial, Brand & Operational Voice
 
-## 5.1 Headlines
+## 6.1 Headlines
 Headlines should be interesting without becoming theatrical.
 - *Avoid:* "The dawn of biological intelligence."
 - *Prefer:* "Understanding whole patient histories in one pass."
 - *Avoid:* "Transforming healthcare through AI."
 - *Prefer:* "Extracting clinical records with fewer errors."
 
-## 5.2 Changelogs & Incident Reports
+## 6.2 Changelogs & Incident Reports
 - State what changed or what failed directly.
 - *Avoid:* "We squashed some nasty bugs and sprinkled performance magic."
 - *Prefer:* "Fixed an issue where PDF uploads larger than 50MB failed without an error message."
 - *Incident communication:* State the issue, the impact, what is working, and when the next update will occur.
 
-## 5.3 Careers & About
+## 6.3 Careers & About
 - Describe the actual daily work, the team, and the physical location (Mumbai, India).
 - Never use startup clichés: "rockstars", "ninjas", "change the world", "fast-paced environment".
 
 ---
 
-# Part 6 — Common Rewrites & The 14-Question Final Test
+# Part 7 — Common Rewrites & The 14-Question Final Test
 
-## 6.1 Common Rewrites Table
+## 7.1 Common Rewrites Table
 
 | Category | Avoid | Prefer |
 | --- | --- | --- |
@@ -264,20 +299,20 @@ Headlines should be interesting without becoming theatrical.
 | **Feature → Use Case** | "Long-context reasoning." | "Ask questions across an entire patient history." |
 | **Praise → Evidence** | "Our most powerful model yet." | "Clinical 2 handles longer records and reads handwriting more reliably than Clinical 1." |
 
-## 6.2 The 14-Question Pre-Publication Test
+## 7.2 The 14-Question Pre-Publication Test
 
 Before publishing any interface, component, article, or release note, ask:
 1. Does this tell the person what they actually need to know?
-2. Could a useful number replace an adjective?
-3. Are we describing the product, or advertising the idea of the product?
-4. Are we saying something because it matters, or because the page felt empty?
-5. Could this be shorter without losing meaning?
-6. Are we making an uncertain claim sound certain?
-7. Are we hiding a relevant limitation?
-8. Are we exposing technical detail that the reader does not need yet?
-9. Would a human-scale example explain this better?
-10. Does the interface describe what is actually happening?
-11. Does the call to action say what happens next?
-12. Could this sentence belong to almost any technology company?
-13. Is there any drama that the facts themselves do not justify?
+2. Is the interface so simple that a grandmother could use it without hesitation?
+3. Could a useful number replace an adjective?
+4. Are we describing the product, or advertising the idea of the product?
+5. Are we saying something because it matters, or because the page felt empty?
+6. Could this be shorter without losing meaning?
+7. Are we making an uncertain claim sound certain?
+8. Are we hiding a relevant limitation?
+9. Are we exposing technical detail that the reader does not need yet?
+10. Would a human-scale example explain this better?
+11. Does the interface describe what is actually happening?
+12. Does the call to action say what happens next?
+13. Could this sentence belong to almost any technology company?
 14. If this sentence or component disappears and nothing is lost, have we removed it?
