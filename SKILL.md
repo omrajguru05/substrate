@@ -90,19 +90,64 @@ containers:
   wide: 1280px      # var(--article-wide-width)
   page: 1440px      # var(--article-page-width)
 
+assets:
+  logo:
+    src: "/substrate-logo.png"
+    url: "https://substrates.in/substrate-logo.png"
+    width: 960
+    height: 880
+  og-image:
+    src: "/substrate-og-image.png"
+    url: "https://substrates.in/substrate-og-image.png"
+    width: 4800
+    height: 2520
+  favicon:
+    src: "/icon.png"
+    apple: "/apple-icon.png"
+
+fonts:
+  relative-sans:
+    local: "/fonts/The-Relative-Sans-Variable.ttf"
+    cdn: "https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Sans-Variable.ttf"
+  relative-mono:
+    local: "/fonts/The-Relative-Mono-Variable.ttf"
+    cdn: "https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Mono-Variable.ttf"
+  geist-pixel-square:
+    local: "/fonts/GeistPixel-Square.woff2"
+    cdn: "https://cdn.jsdelivr.net/npm/@zpress/ui@0.8.8/src/theme/fonts/GeistPixel-Square.woff2"
+
 rounded:
   sm: 0px           # Default for chrome, containers, buttons, inputs
   md: 2px           # Concession for code boxes, tags, media frames
   pill: 9999px      # Concession for HomePillBanner and navigation back button
 ```
 
-## 1.2 Typography Hierarchy
+## 1.2 Typography & Font Distribution
 
 - **Relative Sans (variable, 100–900)**: The calm, neutral, precise voice of the lab. Used for all reading prose, body descriptions, and section subtitles.
 - **Relative Mono (variable, 100–900)**: The instrument's handwriting. Used for reticle coordinates, dates, status tags, table headers, math/code, and navigation metadata. Tracked out (`0.14em`–`0.22em`), uppercase, weight `500`.
 - **Geist Pixel Square**: The shout. Monolithic uppercase pixel headline (`SUBSTRATE LABS`, `NOT FOUND`). Exactly one shout per surface. Fluidly rendered at `clamp(2.8rem, 9.6vw, 9.4rem)`.
 
-## 1.3 Layout & 4-Tier Container System
+### Font Links & CDN Distribution
+
+| Typeface | Format | Weights | Local File Path | Direct CDN URL |
+| --- | --- | --- | --- | --- |
+| **Relative Sans Variable** | TrueType (`.ttf`) | 100–900 | [`/fonts/The-Relative-Sans-Variable.ttf`](/fonts/The-Relative-Sans-Variable.ttf) | [https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Sans-Variable.ttf](https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Sans-Variable.ttf) |
+| **Relative Mono Variable** | TrueType (`.ttf`) | 100–900 | [`/fonts/The-Relative-Mono-Variable.ttf`](/fonts/The-Relative-Mono-Variable.ttf) | [https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Mono-Variable.ttf](https://in1.omcdn.xyz/static/identity/fonts/The-Relative-Mono-Variable.ttf) |
+| **Geist Pixel Square** | WOFF2 (`.woff2`) | 400–900 | [`/fonts/GeistPixel-Square.woff2`](/fonts/GeistPixel-Square.woff2) | [https://cdn.jsdelivr.net/npm/@zpress/ui@0.8.8/src/theme/fonts/GeistPixel-Square.woff2](https://cdn.jsdelivr.net/npm/@zpress/ui@0.8.8/src/theme/fonts/GeistPixel-Square.woff2) |
+
+## 1.3 Brand Assets & Logos
+
+| Asset | Dimensions | Local Path | Production Canonical URL |
+| --- | --- | --- | --- |
+| **Primary Substrate Logo** | 960 × 880 | [`/substrate-logo.png`](/substrate-logo.png) | [https://substrates.in/substrate-logo.png](https://substrates.in/substrate-logo.png) |
+| **Open Graph Visual Asset** | 4800 × 2520 | [`/substrate-og-image.png`](/substrate-og-image.png) | [https://substrates.in/substrate-og-image.png](https://substrates.in/substrate-og-image.png) |
+| **Favicon** | 32 × 32 | [`/icon.png`](/icon.png) | [https://substrates.in/icon.png](https://substrates.in/icon.png) |
+| **Apple Touch Icon** | 180 × 180 | [`/apple-icon.png`](/apple-icon.png) | [https://substrates.in/apple-icon.png](https://substrates.in/apple-icon.png) |
+
+- **Logo Specifications**: Transparent PNG placed on pure black (`#000000`), `object-contain`. Height is strictly `24px` on mobile (`<=600px`), `28px` on tablet (`601px`–`960px`), and `32px` on desktop (`>960px`). Opacity `0.9` at rest, `1.0` on hover. Preloaded via `<link rel="preload" as="image" href="/substrate-logo.png" fetchPriority="high" />`.
+
+## 1.4 Layout & 4-Tier Container System
 
 1. **The Single-Slide Ground (Homepage)**:
    - Header with LCP brand mark (`24px`–`32px`, priority preloaded) and mono links (`Newsroom`, email, handle).
@@ -114,7 +159,7 @@ rounded:
    - `article-frame-full` (`1280px`): High-density ECharts, Mermaid diagrams, and multi-column media groups.
    - `publishing-nav` / `publishing-footer` (`1440px`): Global header grid and bottom colophon.
 
-## 1.4 Canvas Specimen Preparations
+## 1.5 Canvas Specimen Preparations
 
 1. **`NeuralSpecimen`**: Interactive multi-soma biological neural network. Action potentials travel across axonal branches rendered with a dual-stroke technique: thick blood-red sheath (`rgba(181,31,46,0.85)`) with an intense pale pink-white core (`rgba(255,220,225,0.95)`). Responds to cursor velocity and click stimulation.
 2. **`SpecimenField`**: Microscopic organism journey canvas. Multi-lobed membranes, undulating cilia, nucleus displacement, and interactive radar pings.
