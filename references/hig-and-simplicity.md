@@ -4,7 +4,7 @@ A core mandate for all Substrate interfaces, system designs, product surfaces, a
 
 > "When doing the UI, the UI should be brutally simple. There should not be technical language or clutter. The UI should be so easy that even a grandmother can use it. Very few buttons, no clutter, no complex UI. The app should be very simple, hiding complex things behind the scenes — even when doing system design, the model must be compliant to this."
 
-Every user interface, component, and interaction in Substrate must be fully compliant with the Apple Human Interface Guidelines and auditable via `omrajguru05/hig-compliance-auditor`.
+Every user interface, component, and interaction in Substrate must be fully compliant with the Apple Human Interface Guidelines and auditable via `omrajguru/hig-compliance-auditor`.
 
 ---
 
