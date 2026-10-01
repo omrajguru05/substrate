@@ -1,7 +1,7 @@
 {
   "name": "@omrajguru05/substrate",
-  "version": "1.0.0",
-  "description": "Unified design system and brand language skill for Substrate Labs",
+  "version": "1.1.0",
+  "description": "Unified design system, Soma mascot and logo, Stipple layer, and brand language skill for Substrate Labs",
   "author": "Substrate Labs <hi@substrates.in>",
   "license": "MIT",
   "repository": {
@@ -14,6 +14,9 @@
     "substrate",
     "design-system",
     "writing-voice",
-    "dark-field"
+    "dark-field",
+    "soma",
+    "mascot",
+    "stipple"
   ]
 }

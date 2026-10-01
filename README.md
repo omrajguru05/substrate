@@ -24,6 +24,7 @@ npx skills add omrajguru05/substrate --agent claude-code cursor antigravity
 - `references/hig-and-simplicity.md`: The Grandma Standard, 8 Apple HIG principles, accessibility foundations, and 6 disability categories.
 - `references/design-system.md`: Full laboratory design tokens, 4-tier containers, canvas specimen architecture, and 18 rich article components.
 - `references/brand-language.md`: Complete 54-chapter Substrate Brand Language manual.
+- `assets/soma/`: The Soma mascot and logo: 13 states, each as a full and a compact SVG, plus the outline mark. Also served at `https://assets.substrates.in/brand-assets/identity/`.
 
 ## Core Non-Negotiables
 
@@ -32,7 +33,10 @@ npx skills add omrajguru05/substrate --agent claude-code cursor antigravity
 - **Hide Complexity Behind the Scenes:** In both UI and backend system design, the architecture absorbs complexity so the human experience is obvious and calm.
 - **Apple HIG & Universal Accessibility Compliance:** Every UI must be compliant with `omrajguru/hig-compliance-auditor` across all 6 disability categories (Vision, Hearing, Mobility, Speech, Cognitive, Motion).
 - **Red is stimulus (`#B51F2E`); Green is response (`#39D353`).** No decorative color, no fifth hue (no blue, no purple).
+- **Soma is the logo and the only character.** One Soma per surface, always beside literal text.
+- **Stipple draws tone in dots.** Dot-matrix tone in canvas, a dither meter for progress, a `└` tree for contents and steps.
 - **The DOM is still; life happens in the canvas.** Specimen preparations carry all motion. Canvas loops respect `prefers-reduced-motion`.
 - **Write for use, not for features.** Put the useful human meaning first.
 - **Literal interface copy.** Interfaces describe what is actually happening.
+- **Pseudo labels and filler labels are banned.** No eyebrows that restate a heading, no fake readouts, no decorative numbering, no filler chips. Every label carries a real fact.
 - **Evidence before adjectives.** Never rely on empty praise ("revolutionary", "powerful", "seamless").

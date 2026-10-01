@@ -14,6 +14,13 @@ colors:
   rule: "rgba(255, 255, 255, 0.14)"
   hairline-subtle: "rgba(255, 255, 255, 0.08)"
   hairline-hover: "rgba(255, 255, 255, 0.18)"
+  tissue-far: "rgba(163, 163, 163, 0.16)"
+  tissue-mid: "rgba(163, 163, 163, 0.38)"
+  tissue-56: "rgba(163, 163, 163, 0.56)"
+  tissue-near: "rgba(163, 163, 163, 0.72)"
+  soma-membrane: "#161616"
+  soma-nucleus-rest: "#5E5E5E"
+  soma-label-ground: "#0A0A0A"
 typography:
   display-specimen:
     fontFamily: Geist Pixel Square
@@ -44,12 +51,48 @@ containers:
   media: 1140px
   wide: 1280px
   page: 1440px
+stipple:
+  pitch-field: 8px
+  pitch-panel: 7px
+  dot-radius-steps: [0.20, 0.27, 0.33, 0.39, 0.44]
+  dot-colors:
+    - "{colors.tissue-far}"
+    - "{colors.tissue-mid}"
+    - "{colors.tissue-56}"
+    - "{colors.tissue-near}"
+    - "rgba(255, 255, 255, 0.86)"
+  dither-cell: 2px
+  meter-step: 4px
+  meter-height: 16px
+  meter-max-width: 240px
+  tree-glyph: "└"
+  tree-indent: 2ch
 assets:
   logo:
+    src: "/soma/soma-mark-outline.svg"
+    repo: "assets/soma/soma-mark-outline.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg"
+    viewBox: "-120 -120 240 240"
+    format: "svg"
+  logo-filled:
+    src: "/soma/soma-idle.svg"
+    repo: "assets/soma/soma-idle.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle.svg"
+    viewBox: "-120 -120 240 240"
+  logo-legacy:
     src: "/substrate-logo.png"
     url: "https://substrates.in/substrate-logo.png"
     width: 960
     height: 880
+    status: "retired from new work"
+  mascot:
+    name: Soma
+    repo: "assets/soma/"
+    cdn: "https://assets.substrates.in/brand-assets/identity/"
+    file-pattern: "soma-{state}.svg | soma-{state}-compact.svg"
+    states: [idle, hello, happy, listening, reading, thinking, unsure, surprised, sorry, recording, carrying, done, sleeping]
+    full-viewBox: "-120 -120 240 240"
+    compact-viewBox: "-80 -80 160 160"
   og-image:
     src: "/substrate-og-image.png"
     url: "https://substrates.in/substrate-og-image.png"
@@ -95,7 +138,33 @@ components:
     rounded: "{rounded.sm}"
     padding: 24px
   brand-mark:
+    src: "{assets.logo.src}"
     height: 32px
+  soma:
+    membrane: "{colors.soma-membrane}"
+    membraneStroke: "rgba(255, 255, 255, 0.85)"
+    dendrites: "rgba(255, 255, 255, 0.45)"
+    eyes: "{colors.white}"
+    pupils: "{colors.primary}"
+    nucleus: "{colors.soma-nucleus-rest}"
+    nucleus-done: "{colors.bio-green-display}"
+    signal-recording: "{colors.blood-red-display}"
+  stipple-meter:
+    track: "{colors.tissue-mid}"
+    fill: "{colors.white}"
+    typography: "{typography.label-caps}"
+    rounded: "{rounded.sm}"
+  tree-index:
+    glyphColor: "{colors.tissue-mid}"
+    textColor: "{colors.grey-display}"
+    textColorCurrent: "{colors.white}"
+    fontFamily: Relative Mono
+    fontSize: 14px
+  key-hint:
+    fontFamily: Relative Mono
+    fontSize: 11px
+    letterSpacing: 0.18em
+    textColor: "{colors.tissue-near}"
   display-headline:
     typography: "{typography.display-specimen}"
     textColor: "{colors.white}"
@@ -203,6 +272,17 @@ values directly.
 | `blood-red-display` | `#B51F2E` | observed | Red as rendered on black — selection, focus rings, underlines, alerts. |
 | `bio-green-display` | `#39D353` | observed | Green as rendered on black — glows, live states, success indicators. |
 
+### Soma Neutrals
+
+Three greys exist only inside the Soma mascot artwork. They are not new hues and
+they are never used for chrome, text, or backgrounds.
+
+| Token | Hex | Role |
+| --- | --- | --- |
+| `soma-membrane` | `#161616` | Soma's body fill, so the cell reads as a solid object on the black field. |
+| `soma-nucleus-rest` | `#5E5E5E` | Soma's nucleus when nothing is happening. |
+| `soma-label-ground` | `#0A0A0A` | The ground of a tag or page Soma is holding. |
+
 ### Hairlines and Rules
 
 Separation is achieved by optical density, hairlines, and void:
@@ -295,24 +375,188 @@ Fallback stacks: Inter / -apple-system / BlinkMacSystemFont / sans-serif for Rel
 
 ## Brand Assets & Logos
 
-All identity graphics are stored in `/public/` on pure black ground (`#000000`) and served at high resolution:
+**Soma is the default Substrate logo.** The source SVGs live in this repo at
+[`assets/soma/`](../assets/soma/), are served from the brand CDN at
+[`https://assets.substrates.in/brand-assets/identity/`](https://assets.substrates.in/brand-assets/identity/), and ship to the site under `/public/soma/`. Every identity
+graphic sits on pure black ground (`#000000`).
 
-| Asset | Dimensions | Local File Path | Production Canonical URL |
+| Asset | Size | Site Path | CDN URL |
 | --- | --- | --- | --- |
-| **Primary Substrate Logo** | 960 × 880 | [`/substrate-logo.png`](/substrate-logo.png) | [https://substrates.in/substrate-logo.png](https://substrates.in/substrate-logo.png) |
+| **Primary Logo (Soma mark, outline)** | 240 × 240 viewBox | `/soma/soma-mark-outline.svg` | [https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg](https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg) |
+| **Filled Logo (Soma, idle)** | 240 × 240 viewBox | `/soma/soma-idle.svg` | [https://assets.substrates.in/brand-assets/identity/soma-idle.svg](https://assets.substrates.in/brand-assets/identity/soma-idle.svg) |
+| **Small Logo (Soma, idle, compact)** | 160 × 160 viewBox | `/soma/soma-idle-compact.svg` | [https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg](https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg) |
 | **Open Graph Visual Asset** | 4800 × 2520 | [`/substrate-og-image.png`](/substrate-og-image.png) | [https://substrates.in/substrate-og-image.png](https://substrates.in/substrate-og-image.png) |
 | **Favicon** | 32 × 32 | [`/icon.png`](/icon.png) | [https://substrates.in/icon.png](https://substrates.in/icon.png) |
 | **Apple Touch Icon** | 180 × 180 | [`/apple-icon.png`](/apple-icon.png) | [https://substrates.in/apple-icon.png](https://substrates.in/apple-icon.png) |
+| *Legacy strata logo (retired)* | 960 × 880 | [`/substrate-logo.png`](/substrate-logo.png) | [https://substrates.in/substrate-logo.png](https://substrates.in/substrate-logo.png) |
 
 ### Logo Specifications & Usage
-- **Geometry**: Strata lines representing geological/cellular layers beneath a rising circular biological body.
-- **Rendering**: Transparent PNG placed on `#000000`, `object-contain`.
-- **Scaling**: Height is strictly `24px` on mobile (`<=600px`), `28px` on tablet (`601px`–`960px`), and `32px` on desktop (`>960px`).
-- **Interaction**: Opacity `0.9` at rest, transitioning to `1.0` on hover over `200ms`.
-- **LCP Preload**: The header logo is the primary Largest Contentful Paint element and must be preloaded:
+- **Geometry**: Soma, a neuron's cell body. An irregular round membrane, 14
+  short dendrites, two eyes, a mouth, and one nucleus at the lower right.
+- **Which file**: Below `48px` (site header, favicon) use the **compact idle
+  Soma**, because dendrites turn to noise at that size. From `48px` up, use the
+  **outline mark** where the logo sits beside text (footers, documents, print)
+  and the **filled idle Soma** where it stands alone (splash, about page, social
+  avatar).
+- **Rendering**: Inline SVG or `<img>` on `#000000`, `object-contain`. The mark
+  is white only. Never recolour it, never put it on a light ground.
+- **Scaling**: Height is strictly `24px` on mobile (`<=600px`), `28px` on tablet
+  (`601px`–`960px`), and `32px` on desktop (`>960px`). At these sizes use the
+  compact file.
+- **Interaction**: Opacity `0.9` at rest, `1.0` on hover over `200ms`. The logo
+  never changes expression on hover. Expressions belong to the mascot, not the
+  mark.
+- **LCP Preload**: The header logo is the primary Largest Contentful Paint
+  element and must be preloaded:
   ```html
-  <link rel="preload" as="image" href="/substrate-logo.png" fetchPriority="high" />
+  <link rel="preload" as="image" href="/soma/soma-idle-compact.svg" fetchPriority="high" />
   ```
+- **Favicon & app icons**: Regenerate `/icon.png` and `/apple-icon.png` from
+  `soma-idle-compact.svg` on black. Until that is done they still show the
+  strata mark.
+- **Legacy strata logo**: The strata-and-rising-circle mark is retired from new
+  work. Replace it wherever you touch a surface that still uses it.
+
+---
+
+## Soma — Mascot & Logo
+
+Soma is a neuron's cell body, the part of the cell that receives signals and
+decides whether to fire. That is what the product does for a person's records,
+so Soma is both the logo and the one character in the lab.
+
+### Anatomy
+
+| Part | Drawing | Colour |
+| --- | --- | --- |
+| Membrane | Irregular closed path, `scale(60)` | Fill `#161616`, stroke `rgba(255,255,255,0.85)` |
+| Dendrites | 14 short curved strokes, full files only | `rgba(255,255,255,0.45)`, `2px`, round caps |
+| Eyes | Two `r=14` circles at `(±20, −10)` | White, pupils black |
+| Mouth | One short stroke | White, `3px`, round caps |
+| Nucleus | `r=8` circle at `(26, 32)` | `#5E5E5E` at rest. Bio green only in `done` |
+| Props | Tag, page, sound marks, signal dot | Greys and white. Red only for `recording` |
+
+### The Thirteen States
+
+Each state has a full file (`-120 -120 240 240`, with dendrites and props) and a
+compact file (`-80 -80 160 160`, body only). Every file is at
+`https://assets.substrates.in/brand-assets/identity/soma-<state>.svg` and `https://assets.substrates.in/brand-assets/identity/soma-<state>-compact.svg`, for example
+[`soma-done.svg`](https://assets.substrates.in/brand-assets/identity/soma-done.svg). Pick the state that describes what
+the system is actually doing. The status text beside Soma must still be literal.
+
+| State | Show it when | Pair it with copy like |
+| --- | --- | --- |
+| `idle` | Nothing is happening; default and logo | — |
+| `hello` | First visit, empty state, sign-in | "Upload a report to begin." |
+| `happy` | A person finishes something by themselves | "Changes saved." |
+| `listening` | The microphone is open and waiting | "Listening…" |
+| `recording` | Audio is being captured (red dot = stimulus) | "Recording · 00:42" |
+| `reading` | A document is being read | "Reading document…" |
+| `thinking` | A step with no better literal name is running | "Comparing reports…" (never "Thinking…") |
+| `carrying` | Something is being moved or saved; the tag names it | "Saving to Fever notes…" |
+| `done` | A task finished (green nucleus = response) | "Summary ready." |
+| `unsure` | The model could not read a value reliably | "We could not read this value. Check page 4." |
+| `surprised` | Something unexpected but harmless | "This file is larger than usual. It may take 3 minutes." |
+| `sorry` | Something failed | "We could not read this file. Try the original PDF." |
+| `sleeping` | Paused, offline, or after hours | "Processing resumes at 9:00." |
+
+### Rules
+
+- **One Soma per surface.** Never two, never a crowd, never as a bullet or icon.
+- **Red and green keep their meaning on Soma.** The nucleus turns green only in
+  `done`. Red appears only as the `recording` signal dot. The glow on these two
+  is a signal, not decoration; no other state may glow.
+- **Soma never replaces words.** Every state sits beside literal text that
+  explains the situation without the drawing. Soma is `aria-hidden="true"` (or
+  `alt=""`) unless it is the logo, which gets `alt="Substrate"`.
+- **`sorry` is shown, not said.** The face carries the apology so the copy does
+  not have to: no "Oops", no "Sorry!", just what happened and what to do.
+- **Motion lives in the canvas.** In the DOM, Soma is a still SVG. Blinking,
+  breathing, or waving is drawn in a canvas specimen and freezes on the still
+  pose under `prefers-reduced-motion`.
+- **Text on props uses Relative Sans.** The `carrying` tag ships with a Geist
+  fallback; set it in Relative Sans when you rebuild it, and keep the label to
+  one or two lower-case words.
+- **Inlining several SVGs on one page**: every file defines `id="glow"` and
+  `id="redglow"`. Rename the ids or load the files with `<img>` so they do not
+  collide.
+- **Don't** redraw, recolour, rotate past the `hello` tilt (−8°), add limbs, or give Soma clothes, hats, or props outside
+  the set.
+
+---
+
+## The Stipple Layer
+
+Stipple is the dot-matrix way of drawing in Substrate, after the way scientific
+illustrators shade by hand and the way an instrument prints its readout. It adds
+five things and changes nothing else: the black ground, the two signal colours,
+square chrome, hairlines, and the still DOM all stay as they are.
+
+### 1. Dot-matrix tone (canvas only)
+
+- Tone is **dot size on a fixed grid**. No gradients, no blur.
+- Grid pitch: `8px` for full-bleed fields, `7px` for panels.
+- Five steps, as a share of the pitch (radius) and colour:
+
+  | Step | Radius | Colour | Use |
+  | --- | --- | --- | --- |
+  | 1 | `0.20` | `rgba(163,163,163,0.16)` | Distant structure, grain |
+  | 2 | `0.27` | `rgba(163,163,163,0.38)` | Connective tissue |
+  | 3 | `0.33` | `rgba(163,163,163,0.56)` | Body |
+  | 4 | `0.39` | `rgba(163,163,163,0.72)` | Near detail, membranes |
+  | 5 | `0.44` | `rgba(255,255,255,0.86)` | Nuclei, highlights |
+
+- A visitor's click sends a **red ring of dots** outward through the grid. When
+  the ring reaches Soma or another living thing, it answers with a **green
+  ring**. Red acts, green answers.
+- A specimen that represents work in progress **develops dot by dot**: each grid
+  cell has a fixed random threshold and appears when progress passes it.
+- Throttle to about 30fps, stop when off-screen or the tab is hidden, and draw a
+  single still frame under `prefers-reduced-motion`.
+
+### 2. Dither meter
+
+- Track: a `2px` checker in `rgba(163,163,163,0.38)`, `16px` tall, up to
+  `240px` wide, square corners.
+- Fill: solid white. It snaps to `4px` steps and jumps; it never animates.
+- Number: Relative Mono, tabular figures, padded to two digits (`04%`, `48%`,
+  `100%`).
+- Always `role="progressbar"` with `aria-valuenow`, `aria-valuemin`,
+  `aria-valuemax`, and an `aria-label`.
+
+### 3. Tree index
+
+- Glyph `└` (U+2514) in `rgba(163,163,163,0.38)`, then one space, in Relative
+  Mono `14px`.
+- Indent `2ch` per level. Two levels at most.
+- The current item turns white at weight `600`. No arrows, no highlight bars,
+  no red.
+- Use it for article contents and for multi-step progress. A finished step
+  shows the 6px green synapse dot **and** the word "Done".
+- The glyph is decoration to a screen reader: wrap it in `aria-hidden="true"`
+  and keep the list a real `<ol>` inside a labelled `<nav>`.
+
+### 4. Key hints
+
+- Mono caps, `11px`, `0.18em` tracking, `rgba(163,163,163,0.72)`:
+  `PRESS ↑ / ↓ TO SCROLL`, `PRESS ESC TO CLOSE`.
+- Show only under `(hover: hover) and (pointer: fine)`. Hide on touch.
+- Name a key that already works. A hint is never the only way to do something.
+
+### 5. Soma in stipple
+
+- Soma is the only character drawn in a Stipple field, one per surface.
+- In a stipple field, keep a clear ring of void around Soma (about `10px`
+  beyond the dendrites) so the drawing stays readable.
+- Draw Soma from the SVG paths (`Path2D` accepts them directly) at whole-pixel
+  positions. Do not re-draw Soma as pixel art or in dots.
+
+### Stipple don'ts
+
+- Don't use a grey ground like `#141414`. The field is `#000000`.
+- Don't animate dots, meters, or tree items with CSS.
+- Don't use dither as a background texture or a card fill.
+- Don't use the tree glyph for lists that have no hierarchy.
 
 ---
 
@@ -326,7 +570,7 @@ and **The 4-Tier Publishing Shell** (newsroom & articles).
 A single, full-bleed slide (`min-h-screen supports-[height:100dvh]:min-h-dvh`)
 divided into three bands:
 
-1. **Instrument header** — brand mark at left (`24px` mobile, `28px` tablet,
+1. **Instrument header** — Soma mark at left (`24px` mobile, `28px` tablet,
    `32px` desktop; preloaded with high priority as LCP asset), mono nav links
    at right (`Newsroom`, email, handle).
 2. **Observation field** — central specimen canvas (`NeuralSpecimen`), centered,
@@ -384,8 +628,8 @@ Square is the frame; the circle is the life.
 
 - **All chrome is square (`0px`)**, with `2px` as the only concession on small
   interactive elements (code boxes, tags, inputs, media frames).
-- **Circles are reserved for biology:** cells, nuclei, the 6px synapse
-  indicator dot, author avatar portraits.
+- **Circles are reserved for biology:** cells, nuclei, Soma, Stipple dots, the
+  6px synapse indicator dot, author avatar portraits.
 - **Pills (`9999px`)** are used only for navigational back actuators and the
   floating `HomePillBanner`.
 - **Icons are HugeIcons (free stroke set exclusively).** 24px grid, ~1.5px
@@ -427,8 +671,10 @@ inactive.
 ### 1. Slide & Nav Components
 
 - **`slide`**: The base container of every page (`#000000`, text `#A3A3A3`).
-- **`brand-mark`**: The rising circle and strata logo. Clean heights (`24px` to
-  `32px`), preloaded as LCP asset.
+- **`brand-mark`**: The Soma mark (outline, or compact idle below `48px`).
+  Clean heights (`24px` to `32px`), preloaded as LCP asset.
+- **`Soma`**: The mascot, one per surface, in one of thirteen states. See
+  *Soma — Mascot & Logo*.
 - **`display-headline`**: Giant Geist Pixel Square shout. White, leading `0.88`,
   `select-none`. Exactly one per page.
 - **`HomePillBanner`** (`components/home-pill.tsx`): Floating announcement pill
@@ -559,6 +805,9 @@ Every screen and component must satisfy these principles:
 - Do use the 4-tier container scale (`680px` / `1140px` / `1280px` / `1440px`)
   for publishing surfaces.
 - Do ensure every interactive element meets the 44×44px minimum touch target.
+- Do use the Soma mark as the logo, and pick the Soma state that matches what
+  the system is actually doing.
+- Do draw tone in canvas specimens with Stipple dots on a fixed grid.
 
 **Don't**
 
@@ -578,4 +827,12 @@ Every screen and component must satisfy these principles:
   living things or author avatars.
 - Don't set a second display headline on a page, and don't shrink the shout — it
   is either enormous or it is body copy.
+- Don't use the retired strata logo on new work, and don't show more than one
+  Soma on a surface.
+- Don't let Soma's face replace literal status text.
+- Don't use pseudo labels or filler labels: no eyebrow labels that restate the
+  heading, no mono "readouts" without real data (`SIGNAL 07`, `SPECIMEN #042`,
+  decorative coordinates), no decorative `01 / 02 / 03`, no filler chips. Mono
+  `label-caps` exists for real values only. If deleting a label loses nothing,
+  delete it.
 
