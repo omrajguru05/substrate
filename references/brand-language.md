@@ -1343,9 +1343,21 @@ If a line could be placed on a banking app, cloud platform, fitness product, AI 
 
 ---
 
-## 40. Avoid filler labels
+## 40. Pseudo labels and filler labels are banned
 
-Do not place labels above sections simply because the design has room for one.
+This is a ban, not a style preference. Do not place labels above sections simply because the design has room for one, and do not invent labels that imitate an instrument, a version, or a status.
+
+| Kind | Banned examples | Do instead |
+| --- | --- | --- |
+| **Eyebrow / kicker labels** that restate or decorate the heading below them | `OVERVIEW`, `INTRODUCTION`, `OUR MISSION`, `THE PROBLEM`, `WHY IT MATTERS`, `FEATURES`, `TECHNOLOGY` | Delete the label. Write a heading that names the actual thing. |
+| **Pseudo-technical labels**: instrument-style readouts with no real data behind them | `SYSTEM: NOMINAL`, `SIGNAL 07`, `SPECIMEN #042`, `LAT 19.07°N`, `SECTOR 4`, `STATUS: ACTIVE` on something that has no status | A mono label must carry a real value: a date, a file name, a page count, a unit, a measured state, or a key. If there is no real value, there is no label. |
+| **Decorative numbering** | `01 / 02 / 03` on sections whose order means nothing | Number only real sequences (steps, a timeline, a ranked list). |
+| **Filler chips and badges** | `NEW`, `BETA`, `LIVE`, `AI-POWERED`, `NEXT-GEN`, `v2.0` when they are not literally true and useful | Show a chip only when it states a fact the person needs. |
+| **Pseudo-copy labels**: taglines posing as headings | "Intelligence, reimagined.", "Your clinical intelligence workspace", "Begin your document analysis journey" | "Recent reports", "Upload report". |
+
+**The deletion test:** cover the label and read the screen again. If nothing is lost (no fact, no decision, no limitation), the label is banned, and it is removed, not restyled.
+
+The examples below show the most common case, the eyebrow label.
 
 Avoid:
 

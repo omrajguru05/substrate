@@ -1,6 +1,6 @@
 ---
 name: substrate
-description: "The complete dark-field laboratory design system, component architecture, interactive specimen doctrine, and brand language guidelines for Substrate Labs (substrates.in). Apply whenever designing, building, or writing interfaces, specimen canvases, articles, product copy, or scientific publications for Substrate."
+description: "The complete dark-field laboratory design system, Soma mascot and logo, Stipple dot-matrix layer, component architecture, interactive specimen doctrine, and brand language guidelines for Substrate Labs (substrates.in). Apply whenever designing, building, or writing interfaces, specimen canvases, articles, product copy, or scientific publications for Substrate."
 ---
 
 # Substrate Labs — Design System & Brand Language
@@ -12,7 +12,7 @@ A unified dark-field laboratory identity, component engineering system, Apple HI
 This master skill consolidates three core disciplines into a single operating standard:
 1. **[Design System](#part-1--the-dark-field-laboratory-design-system)** ([references/design-system.md](./references/design-system.md)): Dark-field laboratory identity, 8-color vial/observed token system, typography, 4-tier container scale, canvas specimens, and the 18 rich article components.
 2. **[Brutal Simplicity & Apple HIG Compliance](#part-2--brutal-simplicity--apple-hig-compliance-the-grandma-standard)** ([references/hig-and-simplicity.md](./references/hig-and-simplicity.md)): The Grandma Standard, minimal buttons, hidden complexity, 8 Apple HIG principles, accessibility foundations, and 6 disability category standards.
-3. **[Brand Language & Writing Voice](#part-3--substrate-voice--core-qualities)** ([references/brand-language.md](./references/brand-language.md)): Product copy, interface microcopy, research updates, technical papers, clinical/medical safety, release headlines, and the 14-question pre-publication test.
+3. **[Brand Language & Writing Voice](#part-3--substrate-voice--core-qualities)** ([references/brand-language.md](./references/brand-language.md)): Product copy, interface microcopy, research updates, technical papers, clinical/medical safety, release headlines, and the 15-question pre-publication test.
 
 ---
 
@@ -30,6 +30,9 @@ This master skill consolidates three core disciplines into a single operating st
 10. **Evidence Before Adjectives:** Never rely on empty praise ("revolutionary", "powerful", "seamless", "next-generation"). If something improved, state the evidence and replace the adjective with a human-scale number.
 11. **Human-Scale Numbers First:** Translate raw infrastructure metrics into human terms before giving technical specifications (e.g. "A 300-page record takes about 2½ minutes to process" before stating "120 pages per minute").
 12. **Unapologetic Honesty About Limitations:** State uncertainty and limitations with the same clarity and confidence as capabilities. A limitation that materially affects use belongs near the relevant capability, not buried in legal disclaimers.
+13. **Soma Is the Logo and the Only Character:** The Soma mark replaces the strata logo by default. One Soma per surface, in the state that matches what the system is actually doing, always beside literal text.
+14. **Stipple Draws Tone in Dots:** Inside canvas specimens, tone is dot size on a fixed grid. Progress uses the dither meter; contents and steps use the `└` tree index.
+15. **Pseudo Labels and Filler Labels Are Banned:** No eyebrow labels that restate a heading, no fake instrument readouts, no decorative numbering, no filler chips, no tagline-headings. Every label must carry a real fact. If deleting a label loses nothing, it must be deleted.
 
 ---
 
@@ -92,10 +95,24 @@ containers:
 
 assets:
   logo:
-    src: "/substrate-logo.png"
+    src: "/soma/soma-mark-outline.svg"   # Soma mark, default logo
+    repo: "assets/soma/soma-mark-outline.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg"
+  logo-filled:
+    src: "/soma/soma-idle.svg"
+    repo: "assets/soma/soma-idle.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle.svg"
+  logo-compact:
+    src: "/soma/soma-idle-compact.svg"   # below 48px: header, favicon
+    repo: "assets/soma/soma-idle-compact.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg"
+  logo-legacy:
+    src: "/substrate-logo.png"           # strata mark, retired from new work
     url: "https://substrates.in/substrate-logo.png"
-    width: 960
-    height: 880
+  mascot:
+    name: Soma
+    repo: "assets/soma/"                 # 13 states, full + compact
+    cdn: "https://assets.substrates.in/brand-assets/identity/"   # soma-<state>.svg, soma-<state>-compact.svg
   og-image:
     src: "/substrate-og-image.png"
     url: "https://substrates.in/substrate-og-image.png"
@@ -140,12 +157,15 @@ rounded:
 
 | Asset | Dimensions | Local Path | Production Canonical URL |
 | --- | --- | --- | --- |
-| **Primary Substrate Logo** | 960 × 880 | [`/substrate-logo.png`](/substrate-logo.png) | [https://substrates.in/substrate-logo.png](https://substrates.in/substrate-logo.png) |
+| **Primary Logo (Soma mark)** | 240 × 240 viewBox | `/soma/soma-mark-outline.svg` | [https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg](https://assets.substrates.in/brand-assets/identity/soma-mark-outline.svg) |
+| **Filled Logo (Soma, idle)** | 240 × 240 viewBox | `/soma/soma-idle.svg` | [https://assets.substrates.in/brand-assets/identity/soma-idle.svg](https://assets.substrates.in/brand-assets/identity/soma-idle.svg) |
+| **Small Logo (Soma, compact)** | 160 × 160 viewBox | `/soma/soma-idle-compact.svg` | [https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg](https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg) |
 | **Open Graph Visual Asset** | 4800 × 2520 | [`/substrate-og-image.png`](/substrate-og-image.png) | [https://substrates.in/substrate-og-image.png](https://substrates.in/substrate-og-image.png) |
 | **Favicon** | 32 × 32 | [`/icon.png`](/icon.png) | [https://substrates.in/icon.png](https://substrates.in/icon.png) |
 | **Apple Touch Icon** | 180 × 180 | [`/apple-icon.png`](/apple-icon.png) | [https://substrates.in/apple-icon.png](https://substrates.in/apple-icon.png) |
+| *Legacy strata logo (retired)* | 960 × 880 | [`/substrate-logo.png`](/substrate-logo.png) | [https://substrates.in/substrate-logo.png](https://substrates.in/substrate-logo.png) |
 
-- **Logo Specifications**: Transparent PNG placed on pure black (`#000000`), `object-contain`. Height is strictly `24px` on mobile (`<=600px`), `28px` on tablet (`601px`–`960px`), and `32px` on desktop (`>960px`). Opacity `0.9` at rest, `1.0` on hover. Preloaded via `<link rel="preload" as="image" href="/substrate-logo.png" fetchPriority="high" />`.
+- **Logo Specifications**: Soma is the default logo. White SVG on pure black (`#000000`), `object-contain`, never recoloured. Below `48px` (header, favicon) use the compact idle Soma; from `48px` up, the outline mark beside text and the filled idle Soma when it stands alone. Height is strictly `24px` on mobile (`<=600px`), `28px` on tablet (`601px`–`960px`), and `32px` on desktop (`>960px`). Opacity `0.9` at rest, `1.0` on hover; the logo never changes expression. Preloaded via `<link rel="preload" as="image" href="/soma/soma-idle-compact.svg" fetchPriority="high" />`. Favicon and Apple icon are to be regenerated from `soma-idle-compact.svg`. The strata mark is retired from new work.
 
 ## 1.4 Layout & 4-Tier Container System
 
@@ -165,7 +185,7 @@ rounded:
 2. **`SpecimenField`**: Microscopic organism journey canvas. Multi-lobed membranes, undulating cilia, nucleus displacement, and interactive radar pings.
 3. **`SignalSpecimen`**: Linear biological signal wave monitor.
 
-## 1.5 The 18 Rich Article Block Components
+## 1.6 The 18 Rich Article Block Components
 
 - **`articleImage` / `articleVideo` / `vimeo`**: Structured media with caption, photographic credit, and external source link.
 - **`diagram`**: Mermaid.js diagram in dark-field palette with a one-click modal expansion for deep inspection.
@@ -184,6 +204,42 @@ rounded:
 - **`citationReference`**: Academic bibliography entries with DOI, arXiv, and PubMed links, connected to superscript numbered citations.
 - **`mediaGroup`**: Compound container supporting tabbed rails, carousels, and responsive split columns (`50/50`, `60/40`, `67/33`).
 - **`divider`**: Section separation in three styles: hairline `line`, centered `dots` (`· · ·`), or negative `space`.
+
+## 1.7 Soma — Mascot & Logo
+
+Soma is a neuron's cell body: it receives signals and decides whether to fire. Source SVGs live in [`assets/soma/`](./assets/soma/) and on the brand CDN at `https://assets.substrates.in/brand-assets/identity/soma-<state>[-compact].svg`, each state in a full file (`-120 -120 240 240`, dendrites and props) and a compact file (`-80 -80 160 160`, body only). Full anatomy and rules: [`references/design-system.md`](./references/design-system.md#soma--mascot--logo).
+
+| State | Show it when | Literal copy beside it |
+| --- | --- | --- |
+| `idle` | Nothing is happening; default and logo | — |
+| `hello` | First visit, empty state | "Upload a report to begin." |
+| `happy` | A person finished something | "Changes saved." |
+| `listening` | Microphone open, waiting | "Listening…" |
+| `recording` | Audio being captured (red dot) | "Recording · 00:42" |
+| `reading` | A document is being read | "Reading document…" |
+| `thinking` | A step with no better literal name | "Comparing reports…" (never "Thinking…") |
+| `carrying` | Something is being moved or saved | "Saving to Fever notes…" |
+| `done` | A task finished (green nucleus) | "Summary ready." |
+| `unsure` | A value could not be read reliably | "We could not read this value. Check page 4." |
+| `surprised` | Unexpected but harmless | "This file is larger than usual. It may take 3 minutes." |
+| `sorry` | Something failed | "We could not read this file. Try the original PDF." |
+| `sleeping` | Paused, offline, after hours | "Processing resumes at 9:00." |
+
+- **One Soma per surface.** Never a bullet, icon, or crowd.
+- **Signals keep their meaning:** the nucleus is `#5E5E5E` at rest and turns bio green only in `done`; red appears only as the `recording` dot. No other state glows.
+- **Soma never replaces words.** Mark it `aria-hidden="true"` / `alt=""` unless it is the logo (`alt="Substrate"`). `sorry` shows the apology so the copy never says "Oops".
+- **Still in the DOM, alive in the canvas.** Blinks and waves are drawn in canvas and freeze under `prefers-reduced-motion`.
+- Soma's three neutrals (`#161616` membrane, `#5E5E5E` nucleus at rest, `#0A0A0A` prop ground) exist only inside the artwork.
+
+## 1.8 The Stipple Layer
+
+A dot-matrix way of drawing that adds five things and changes nothing else. Full spec: [`references/design-system.md`](./references/design-system.md#the-stipple-layer).
+
+1. **Dot-matrix tone** (canvas only): dot size on a fixed grid (`8px` fields, `7px` panels), five steps from tissue `.16` to white `.86`. A click sends a red ring of dots; living things answer with a green ring. Work-in-progress specimens develop dot by dot.
+2. **Dither meter:** `2px` checker track in tissue `.38`, solid white fill snapping to `4px`, mono tabular `04%`, `role="progressbar"`. Never animated.
+3. **Tree index:** `└` glyph in tissue `.38`, Relative Mono `14px`, `2ch` indent, two levels max, current item white `600`. Finished steps show the green dot and the word "Done".
+4. **Key hints:** `PRESS ↑ / ↓ TO SCROLL` in mono caps, tissue `.72`, only for fine pointers, only for keys that already work.
+5. **Soma in stipple:** the only character in a field, drawn from its SVG paths with a clear ring of void around it.
 
 ---
 
@@ -273,11 +329,18 @@ Interfaces must describe what is actually happening.
 | **Confirmations**| "Success! Your report has been successfully deleted." | "Report deleted." / "Changes saved." |
 | **Buttons / CTAs**| "Get started" / "Explore" / "Continue" | "Upload report" / "Compare reports" / "Review fields" / "Download PDF" |
 
-## 4.2 Banned Filler & Pseudo Labels
-Every word must explain what something is, help someone decide, or communicate a limitation.
-- *Avoid:* "Your clinical intelligence workspace" → *Prefer:* "Recent reports"
-- *Avoid:* "Begin your document analysis journey" → *Prefer:* "Upload report"
-- *Rule:* If a label or heading can disappear without making the interface harder to understand, remove it. Whitespace is always better than filler.
+## 4.2 Banned: Pseudo Labels & Filler Labels
+This is a ban, not a preference. Every label must explain what something is, help someone decide, or communicate a limitation. The lab aesthetic (mono caps, reticle-style metadata) makes fake labels tempting; that is exactly why they are banned.
+
+| Kind | Banned examples | Do instead |
+| --- | --- | --- |
+| **Eyebrow / kicker labels** that restate or decorate the heading below them | `OVERVIEW`, `INTRODUCTION`, `OUR MISSION`, `THE PROBLEM`, `WHY IT MATTERS`, `FEATURES`, `TECHNOLOGY` | Delete the label. Write a heading that names the actual thing. |
+| **Pseudo-technical labels**: instrument-style readouts with no real data behind them | `SYSTEM: NOMINAL`, `SIGNAL 07`, `SPECIMEN #042`, `LAT 19.07°N`, `SECTOR 4`, `STATUS: ACTIVE` on something that has no status | A mono label must carry a real value: a date, a file name, a page count, a unit, a measured state, or a key. If there is no real value, there is no label. |
+| **Decorative numbering** | `01 / 02 / 03` on sections whose order means nothing | Number only real sequences (steps, a timeline, a ranked list). |
+| **Filler chips and badges** | `NEW`, `BETA`, `LIVE`, `AI-POWERED`, `NEXT-GEN`, `v2.0` when they are not literally true and useful | Show a chip only when it states a fact the person needs. |
+| **Pseudo-copy labels**: taglines posing as headings | "Intelligence, reimagined.", "Your clinical intelligence workspace", "Begin your document analysis journey" | "Recent reports", "Upload report". |
+
+**The deletion test:** cover the label and read the screen again. If nothing is lost (no fact, no decision, no limitation), the label is banned, and it is removed, not restyled. Whitespace is always better than filler.
 
 ## 4.3 Uncertainty & Limitations
 Uncertainty is an inherent part of scientific systems. State it directly and locally.
@@ -329,7 +392,7 @@ Headlines should be interesting without becoming theatrical.
 
 ---
 
-# Part 7 — Common Rewrites & The 14-Question Final Test
+# Part 7 — Common Rewrites & The 15-Question Final Test
 
 ## 7.1 Common Rewrites Table
 
@@ -344,7 +407,7 @@ Headlines should be interesting without becoming theatrical.
 | **Feature → Use Case** | "Long-context reasoning." | "Ask questions across an entire patient history." |
 | **Praise → Evidence** | "Our most powerful model yet." | "Clinical 2 handles longer records and reads handwriting more reliably than Clinical 1." |
 
-## 7.2 The 14-Question Pre-Publication Test
+## 7.2 The 15-Question Pre-Publication Test
 
 Before publishing any interface, component, article, or release note, ask:
 1. Does this tell the person what they actually need to know?
@@ -361,3 +424,4 @@ Before publishing any interface, component, article, or release note, ask:
 12. Does the call to action say what happens next?
 13. Could this sentence belong to almost any technology company?
 14. If this sentence or component disappears and nothing is lost, have we removed it?
+15. Does every label carry a real fact, or is any of it an eyebrow, a fake readout, decorative numbering, or a filler chip?
