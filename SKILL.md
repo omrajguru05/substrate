@@ -102,6 +102,10 @@ assets:
     src: "/soma/soma-idle.svg"
     repo: "assets/soma/soma-idle.svg"
     cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle.svg"
+  logo-compact:
+    src: "/soma/soma-idle-compact.svg"   # below 48px: header, favicon
+    repo: "assets/soma/soma-idle-compact.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg"
   logo-legacy:
     src: "/substrate-logo.png"           # strata mark, retired from new work
     url: "https://substrates.in/substrate-logo.png"

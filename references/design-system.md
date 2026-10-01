@@ -79,6 +79,12 @@ assets:
     repo: "assets/soma/soma-idle.svg"
     cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle.svg"
     viewBox: "-120 -120 240 240"
+  logo-compact:
+    src: "/soma/soma-idle-compact.svg"
+    repo: "assets/soma/soma-idle-compact.svg"
+    cdn: "https://assets.substrates.in/brand-assets/identity/soma-idle-compact.svg"
+    viewBox: "-80 -80 160 160"
+    use: "below 48px: site header, favicon"
   logo-legacy:
     src: "/substrate-logo.png"
     url: "https://substrates.in/substrate-logo.png"
@@ -138,7 +144,7 @@ components:
     rounded: "{rounded.sm}"
     padding: 24px
   brand-mark:
-    src: "{assets.logo.src}"
+    src: "{assets.logo-compact.src}"
     height: 32px
   soma:
     membrane: "{colors.soma-membrane}"
